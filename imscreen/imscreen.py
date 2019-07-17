@@ -8,7 +8,9 @@ scr_width, scr_height = str(get_monitors()[0]).split('(')[1].split('+')[0].split
 vs = cv2.VideoCapture(0)
 global st
 st = 0
-def capture(x=0,y=0,w=int(scr_width),h=int(scr_width)):
+def capture(y=0,x=0,w=int(scr_width),h=int(scr_width)):
+    w = w-y
+    h = h-x
     global st
     st = time.time()
     try:
