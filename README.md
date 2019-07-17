@@ -6,6 +6,11 @@ imscreen is intended to provide seamless functions for quickly capturing frames 
 
 > Quickly and efficiently capture screen / webcam with no hassle, the captured frame is returned as Numpy N-dimensional Array, So are very easy to read and process with OpenCV. On an average powered computer, it was able to capture frames with `80 FPS`
 
+### How to install
+```
+>> pip install imscreen
+```
+
 ### External Modules Used Inside the Package
 ```
 >> opencv-contrib-python
