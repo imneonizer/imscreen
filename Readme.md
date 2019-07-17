@@ -65,6 +65,8 @@ while True:
     cv2.waitKey(1)
 ```
 
+![Example](https://github.com/imneonizer/imscreen/blob/master/example/screen_shot.png)
+
 Hope you enjoyed today's tutorial. Don't forget to star the repository.
 if you have any query, feel free to ask.
 
