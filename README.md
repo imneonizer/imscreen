@@ -16,7 +16,7 @@ imscreen is intended to provide seamless functions for quickly capturing frames 
 >> opencv-contrib-python
 >> numpy
 >> mss
->> screeninfo
+>> pyautogui
 ```
 ### Usage
 ```
@@ -42,7 +42,7 @@ If we pass only two values to the function, the other two arguments will be set 
 `imscreen.capture(10,100)` will be treated as `imscreen.capture(10,100,screen_width, screen_height)`
 
 If we don't pass any values to the function, it will capture the whole screen by default.
-`imscreen.capture()` will be treated as `imscreen.capture(0,0,screen_width,screen_height)`
+`imscreen.capture()` will be treated as `imscreen.capture(0,0,400,300)`
 
 Atlast, if we pass any string value to the function, say: '0', it will capture frames from your default webcam.
 `imscreen.capture('0')` will be treated as `imscreen.capture(webcam)`
