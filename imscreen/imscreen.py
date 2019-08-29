@@ -3,19 +3,22 @@ import numpy
 import cv2
 import time
 import math
-from screeninfo import get_monitors
-scr_width, scr_height = str(get_monitors()[0]).split('(')[1].split('+')[0].split('x')
+import pyautogui
+
+scr_width, scr_height = pyautogui.size()
 vs = cv2.VideoCapture(0)
 global st
 st = 0
-def capture(y=0,x=0,w=int(scr_width),h=int(scr_width)):
-    w = w-y
-    h = h-x
+def capture(y=0,x=0,w=int(scr_width),h=int(scr_height)):
+
+    if not type(y) == str:
+        w = w-y
+        h = h-x
     global st
     st = time.time()
     try:
-        if type(x) == type(''):
-            success,frame = vs.read()
+        if type(y) == str:
+            success,frame = vs.read(0)
             return (True,frame)
         else:
             assert w != 0, '>> Error! Width Cannot be Zero.'
@@ -28,19 +31,36 @@ def capture(y=0,x=0,w=int(scr_width),h=int(scr_width)):
         print(e)
         return (False,bin)
 
+global fps_dict
+fps_dict = {0:30, 1:30, 2:30, 3:30, 4:30, 5:30, 6:30 ,7:30 ,8:30 ,9:30 ,10:30 ,11:30 ,12:30 ,13:30 ,14:30 ,15:30}
+
+global fps_idx
+fps_idx = 0
 def fps(log = False):
     try:
         global st
+        global fps_dict
+        global fps_idx
+
+        if fps_idx == len(list(fps_dict.values())):
+            fps_idx = 0
+
         et = time.time()
         tt = 1/(et-st)
         FPS = round(tt)
         FPS = int(math.ceil(FPS / 10.0)) * 10
-        if log == True:
-            print('FPS: {}'.format(FPS))
-        return FPS
+
+        fps_dict.update({fps_idx:FPS})
+        average_fps = max(list(fps_dict.values()))
+        fps_idx +=1
+        return average_fps
     except:
+        FPS = 0
+        fps_dict = {0:30, 1:30, 2:30, 3:30, 4:30, 5:30}
+        fps_idx = 0
+        return FPS
+    finally:
         if log == True:
-            print('FPS: {}'.format(0))
-        return 0
+            print('FPS: {}'.format(average_fps))
 
 

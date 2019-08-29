@@ -7,14 +7,14 @@ imscreen is intended to provide seamless functions for quickly capturing frames 
 > Quickly and efficiently capture screen / webcam with no hassle, the captured frame is returned as Numpy N-dimensional Array, So are very easy to read and process with OpenCV. On an average powered computer, it was able to capture frames with `80 FPS`
 
 ### External Modules Used Inside the Package
-```
+```python
 >> opencv-contrib-python
 >> numpy
 >> mss
->> screeninfo
+>> pyautogui
 ```
 ### Usage
-```
+```python
 import imscreen
 import cv2
 while True:
@@ -26,11 +26,11 @@ while True:
 ```
 
 ### Functions Overview
-```
+```python
 success, frame = imscreen.capture(0,0,100,100)
 ```
 The function `imscreen.capture()` takes four positional arguments which are nothing but `Top, Left, Width, Height` Coordinates of the screen which are required to capture. And returns a Boolean, Frame. The Boolean is used to check if there is any error in reading the frames so that wea can `break` loops while capturing continuously.
->> Note:- Capturing only required area of screen results in Higher FPS.
+>Note:- Capturing only required area of screen results in Higher FPS.
 
 ##### Let's see what else we can do with the `capture()` function
 If we pass only two values to the function, the other two arguments will be set as screen's resolution width and height by default.
@@ -50,7 +50,7 @@ fps = imscreen.fps(log = True)
 `imscreen.fps()` returns FPS and if we set `fps(log = True)` it will also print out in the console, and if we set `fps = imscreen.fps(log = False)`, this means the fps will be stored inside the `fps` variable but will not print the FPS inisde the console, this can be preety handy when you only want to see the FPS in the console or if you need to store it inside some variable, so that later it can be used to write on to the frame directly.
 
 #### Example
-```
+```python
 import cv2
 import numpy as np
 import imscreen
@@ -65,7 +65,7 @@ while True:
     cv2.waitKey(1)
 ```
 
-![Example](https://github.com/imneonizer/imscreen/blob/master/example/screen_shot.png)
+![Example](example/screen_shot.png)
 
 Hope you enjoyed the Documentation. Don't forget to star the repository.
 if you have any query, feel free to ask.
