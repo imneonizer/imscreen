@@ -7,19 +7,19 @@ imscreen is intended to provide seamless functions for quickly capturing frames 
 > Quickly and efficiently capture screen / webcam with no hassle, the captured frame is returned as Numpy N-dimensional Array, So are very easy to read and process with OpenCV. On an average powered computer, it was able to capture frames with `60 FPS`
 
 ### How to install
-```
+```python
 >> pip install imscreen
 ```
 
 ### External Modules Used Inside the Package
-```
+```python
 >> opencv-contrib-python
 >> numpy
 >> mss
 >> pyautogui
 ```
 ### Usage
-```
+```python
 import imscreen
 import cv2
 while True:
@@ -31,11 +31,11 @@ while True:
 ```
 
 ### Functions Overview
-```
+```python
 success, frame = imscreen.capture(0,0,100,100)
 ```
 The function `imscreen.capture()` takes four positional arguments which are nothing but `Top, Left, Width, Height` Coordinates of the screen which are required to capture. And returns a Boolean, Frame. The Boolean is used to check if there is any error in reading the frames so that wea can `break` loops while capturing continuously.
->> Note:- Capturing only required area of screen results in Higher FPS.
+> Note:- Capturing only required area of screen results in Higher FPS.
 
 ##### Let's see what else we can do with the `capture()` function
 If we pass only two values to the function, the other two arguments will be set as screen's resolution width and height by default.
@@ -48,14 +48,14 @@ Atlast, if we pass any string value to the function, say: '0', it will capture f
 `imscreen.capture('0')` will be treated as `imscreen.capture(webcam)`
 
 ##### This library also provides FPS with / without logging in the console.
-```
+```python
 fps = imscreen.fps(log = True)
 ```
 
 `imscreen.fps()` returns FPS and if we set `fps(log = True)` it will also print out in the console, and if we set `fps = imscreen.fps(log = False)`, this means the fps will be stored inside the `fps` variable but will not print the FPS inisde the console, this can be preety handy when you only want to see the FPS in the console or if you need to store it inside some variable, so that later it can be used to write on to the frame directly.
 
 #### Example
-```
+```python
 import cv2
 import numpy as np
 import imscreen
