@@ -61,7 +61,7 @@ import numpy as np
 import imscreen
 
 while True:
-    success, frame = imscreen.capture(0,0,100,100)
+    success, frame = imscreen.capture(0,0,500,300)
     if not success:
         break
     fps = imscreen.fps(log = True)
