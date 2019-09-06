@@ -4,7 +4,7 @@
 This is the Official Github Repository for PyPI package `imscreen`.
 imscreen is intended to provide seamless functions for quickly capturing frames from `webcam / computer's screen` with Ultra High Frame Rates.
 
-> Quickly and efficiently capture screen / webcam with no hassle, the captured frame is returned as Numpy N-dimensional Array, So are very easy to read and process with OpenCV. On an average powered computer, it was able to capture frames with `80 FPS`
+> Quickly and efficiently capture screen / webcam with no hassle, the captured frame is returned as Numpy N-dimensional Array, So are very easy to read and process with OpenCV. On an average powered computer, it was able to capture frames with `60 FPS`
 
 ### How to install
 ```
