@@ -1,10 +1,11 @@
 # imscreen
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
+
 #### About
 This is the Official Github Repository for PyPI package `imscreen`.
 imscreen is intended to provide seamless functions for quickly capturing frames from `webcam / computer's screen` with Ultra High Frame Rates.
 
-> Quickly and efficiently capture screen / webcam with no hassle, the captured frame is returned as Numpy N-dimensional Array, So are very easy to read and process with OpenCV. On an average powered computer, it was able to capture frames with `80 FPS`
+> Quickly and efficiently capture screen / webcam with no hassle, the captured frame is returned as Numpy N-dimensional Array, So are very easy to read and process with OpenCV. On an average powered computer, it was able to capture frames with `60 FPS`
 
 ### External Modules Used Inside the Package
 ```python
@@ -39,7 +40,7 @@ If we pass only two values to the function, the other two arguments will be set 
 If we don't pass any values to the function, it will capture the whole screen by default.
 `imscreen.capture()` will be treated as `imscreen.capture(0,0,screen_width,screen_height)`
 
-Atlast, if we pass any string value to the function, say: '0', it will capture frames from your default webcam.
+At last, if we pass any string value to the function, say: '0', it will capture frames from your default webcam.
 `imscreen.capture('0')` will be treated as `imscreen.capture(webcam)`
 
 ##### This library also provides FPS with / without logging in the console.
@@ -52,7 +53,6 @@ fps = imscreen.fps(log = True)
 #### Example
 ```python
 import cv2
-import numpy as np
 import imscreen
 
 while True:
